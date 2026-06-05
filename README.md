@@ -1,56 +1,64 @@
-# Hearthstone-like "OOPSTONE" card game
+# OOPSTONE
 
-## 1. Project Overview
-이 프로젝트는 하스스톤을 모티브로 한 콘솔 베이스 카드 게임이다. Python의 객체지향 프로그래밍 원칙을 사용하여 카드, 플레이어, 덱, 턴 진행, 전투 로그를 객체로 분리해 구현한다.
-## 2. Motivation
-카드, 플레이어, 덱, 턴, 필드 등을 모델링하면서 OOP 디자인을 구현해보는 것이 목표이다.
-## 3. Main Features
-- 플레이어 vs 적
-- 덱과 핸드 시스템
+## Overview
+OOPSTONE은 Hearthstone을 참고한 콘솔 기반 턴제 카드 게임입니다.
+Python 객체지향 구조를 사용해 카드, 플레이어, 필드, 게임 진행, 콘솔 UI를 분리했습니다.
+
+## Features
+- Player 1 vs Player 2 턴제 진행
 - 마나 기반 카드 사용
-- 하수인 카드와 마법 카드
-- 하수인의 공격, 피격 및 사망 시스템
-- 턴제 게임
-- 배틀 로그
-- UI와 게임 로직의 분리
-## 4. OOP Design
-이 프로젝트는 상속과 다형성을 사용하여 다양한 카드 유형을 표현한다. 각 카드는 고유한 play() 동작을 구현하며, 게임 관리자는 게임 진행 상황을 총괄한다.
-## 5. Project Structure
+- 하수인 카드와 주문 카드
+- 하수인 소환, 영웅 공격, 하수인 전투
+- JSON 파일을 통한 카드 데이터 로딩
+- 콘솔 UI와 게임 로직 분리
+
+## Project Structure
+```text
+oopstone/
+|-- main.py
+|-- game/
+|   |-- card.py
+|   |-- card_loader.py
+|   |-- console_ui.py
+|   |-- deck.py          # 현재 미구현
+|   |-- effect.py        # 현재 미구현
+|   |-- field.py
+|   |-- game_manager.py
+|   `-- player.py
+|-- data/
+|   `-- cards.json
+`-- README.md
 ```
-hearthstone_oop/
-│
-├─ main.py
-├─ game/
-│  ├─ card.py
-│  ├─ player.py
-│  ├─ deck.py
-│  ├─ game_manager.py
-│  └─ console_ui.py
-│
-├─ data/
-│  └─ cards.json
-│
-├─ README.md
-└─ requirements.txt
+
+## How to Run
+```bash
+python main.py
 ```
-## 6. How to Run
-in bash `python main.py`
-## 7. Example Gameplay
-## 8. Key Classes
+
+## Main Classes
 | Class | Responsibility |
 |---|---|
-| Card | Base class for all cards |
-| MinionCard | Represents a summonable minion card |
-| SpellCard | Represents a one-time effect card |
-| Player | Manages HP, mana, deck, and hand |
-| Deck | Stores and draws cards |
-| GameManager | Controls turn flow and win/loss logic |
-| ConsoleUI | Handles console input and output |
-## 9. Future Improvements
-- Add Pygame graphical interface
-- Add enemy AI strategy
-- Add more card effects
-- Add save/load system
-- Add deck-building feature
-## 10. References
-- Heathstone
+| Card | 모든 카드의 기본 클래스 |
+| MinionCard | 필드에 소환되는 하수인 카드 |
+| SpellCard | 즉시 피해를 주는 주문 카드 |
+| CardLoader | JSON 카드 데이터를 객체로 변환 |
+| Player | 체력, 마나, 덱, 손패, 필드 관리 |
+| Field | 하수인 배치와 사망 처리 |
+| GameManager | 턴 진행, 카드 사용, 전투, 승패 관리 |
+| ConsoleUI | 콘솔 입력과 출력 처리 |
+
+## Future Improvements
+- 덱 전용 클래스 구현
+- 효과 시스템 구현
+- 간단한 AI 추가
+- 카드 종류 확장
+- 저장/불러오기 기능 추가
+
+## Reference
+[1] J. Seo, Object-Oriented Programming Lecture Slides, Konkuk University, Spring 2026.
+[2] Blizzard Entertainment, Hearthstone Official Website. Available: https://hearthstone.
+blizzard.com/
+[3] Python Software Foundation, Python 3 Documentation. Available: https://docs.python.org/3/
+[4] S. F. Lott and D. Phillips, Python Object-Oriented Programming: Build Robust and Maintainable
+Object-Oriented Python Applications and Libraries, 4th ed. Birmingham, UK: Packt Publishing,
+2021.
