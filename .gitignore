@@ -1,2 +1,10 @@
 AGENT.md
 report_notes.md
+echo __pycache__/ >> .gitignore
+echo "*.pyc" >> .gitignore
+echo .obsidian/ >> .gitignore
+# Local/editor files
+.obsidian/
+__pycache__/
+*.pyc
+project_code.md
