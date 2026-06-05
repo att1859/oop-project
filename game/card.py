@@ -9,7 +9,7 @@ class Card(ABC):
         self.description = description
 
     @abstractmethod
-    def play(self, owner, opponent):
+    def play(self, owner, target):
         pass
 
     def __str__(self):
@@ -25,14 +25,14 @@ class MinionCard(Card):
         super().__init__(name, cost, description)
         self.attack = attack
         self.health = health
+        self.has_attacked = False
 
-    def play(self, owner, opponent):
-        # 최소 버전: 하수인은 필드에 남지 않고 즉시 피해 적용
-        opponent.take_damage(self.attack)
-        return (
-            f"{owner.name} played {self.name}. "
-            f"It attacks {opponent.name} for {self.attack} damage."
-        )
+    def play(self, owner, target):
+        self.has_attacked = True
+        return owner.field.add_minion(self)
+
+    def take_damage(self, amount):
+        self.health -= amount
 
     def __str__(self):
         return (
@@ -55,12 +55,11 @@ class SpellCard(Card):
         self.damage = damage
 
     def play(self, owner, target):
-        # UI 분리: 출력하지 않고 메시지만 반환
         target.take_damage(self.damage)
-        return (
+        return [(
             f"{owner.name} cast {self.name}. "
             f"It deals {self.damage} damage to {target.name}."
-        )
+        )]
 
     def __str__(self):
         return (

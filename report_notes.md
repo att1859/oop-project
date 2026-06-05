@@ -34,3 +34,27 @@ report_notes.md
 - 콘솔 UI 한계
 - AI 상대 단순함
 - Pygame 확장 가능성
+## 6. Trouble Shooting & 개발 노트
+### cards.json으로 카드 따로 관리하고 받아오기
+cardLoader 파일을 만들고 game.card를 import한다. card_loader는 cards.json data를 읽어서 카드 객체까지 만든다. 그걸 game manager가 가져가서 사용,관리한다
+### field 제작 스켈레톤 코드
+```
+MAX_MINION = 5 #필드에 있는 최대 미니언 
+import player, card
+class field:
+	#if(player1이 minnion1을 play()하면)
+	미니언이 field list에 추가됨
+	
+	#play ...
+	field가 full인 경우 'your field is full' 메시지 출력
+	
+	#after play
+	attack한 미니언, target된 미니언에 대해 검사
+	:minion의 hp가 0 이하가 되면 field에서 제거하고
+	 미니언 사망 로그를 띄움
+	 
+#해결해야할 사항
+field를 플레이어마다 갖게해야하는데 어떻게?
+```
+
+

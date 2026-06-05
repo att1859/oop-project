@@ -1,0 +1,126 @@
+[
+  {
+    "name": "Wisp",
+    "type": "minion",
+    "cost": 0,
+    "description": "A tiny free minion.",
+    "attack": 1,
+    "health": 1
+  },
+  {
+    "name": "Murloc Raider",
+    "type": "minion",
+    "cost": 1,
+    "description": "A cheap aggressive minion.",
+    "attack": 2,
+    "health": 1
+  },
+  {
+    "name": "Voodoo Doctor",
+    "type": "minion",
+    "cost": 1,
+    "description": "A small support minion.",
+    "attack": 2,
+    "health": 1
+  },
+  {
+    "name": "Bloodfen Raptor",
+    "type": "minion",
+    "cost": 2,
+    "description": "A solid early-game beast.",
+    "attack": 3,
+    "health": 2
+  },
+  {
+    "name": "River Crocolisk",
+    "type": "minion",
+    "cost": 2,
+    "description": "A durable early-game minion.",
+    "attack": 2,
+    "health": 3
+  },
+  {
+    "name": "Ironfur Grizzly",
+    "type": "minion",
+    "cost": 3,
+    "description": "A defensive mid-game minion.",
+    "attack": 3,
+    "health": 3
+  },
+  {
+    "name": "Chillwind Yeti",
+    "type": "minion",
+    "cost": 4,
+    "description": "A strong vanilla mid-game minion.",
+    "attack": 4,
+    "health": 5
+  },
+  {
+    "name": "Sen'jin Shieldmasta",
+    "type": "minion",
+    "cost": 4,
+    "description": "A defensive minion with strong health.",
+    "attack": 3,
+    "health": 5
+  },
+  {
+    "name": "Booty Bay Bodyguard",
+    "type": "minion",
+    "cost": 5,
+    "description": "A large defensive minion.",
+    "attack": 5,
+    "health": 4
+  },
+  {
+    "name": "Boulderfist Ogre",
+    "type": "minion",
+    "cost": 6,
+    "description": "A powerful late-game minion.",
+    "attack": 6,
+    "health": 7
+  },
+  {
+    "name": "War Golem",
+    "type": "minion",
+    "cost": 7,
+    "description": "A very large late-game minion.",
+    "attack": 7,
+    "health": 7
+  },
+  {
+    "name": "Core Hound",
+    "type": "minion",
+    "cost": 7,
+    "description": "A high-attack late-game minion.",
+    "attack": 9,
+    "health": 5
+  },
+  {
+    "name": "Arcane Shot",
+    "type": "spell",
+    "cost": 1,
+    "description": "Deal 2 damage.",
+    "damage": 2
+  },
+  {
+    "name": "Frostbolt",
+    "type": "spell",
+    "cost": 2,
+    "description": "Deal 3 damage.",
+    "damage": 3
+  },
+  {
+    "name": "Fireball",
+    "type": "spell",
+    "cost": 4,
+    "description": "Deal 6 damage.",
+    "damage": 6
+  },
+  {
+    "name": "Pyroblast",
+    "type": "spell",
+    "cost": 10,
+    "description": "Deal 10 damage.",
+    "damage": 10
+  }
+]
